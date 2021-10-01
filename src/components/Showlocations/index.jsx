@@ -1,20 +1,15 @@
 import React from "react";
 
-import { Container } from "./styles";
+import { Container, Location } from "./styles";
 
 function Showlocations({ item }) {
   return (
     <Container>
-      Location: {item.name}
-      <br />
-      Type: {item.type}
-      <br />
-      Dimension: {item.dimension}
-      <br />
-      Url: {item.url}
-      <br />
-      Residents: {item.residents}
-      <br />
+      <Location> {item.name} </Location>
+
+      <Location>Type: {item.type}</Location>
+
+      <Location>Dimension: {item.dimension}</Location>
     </Container>
   );
 }

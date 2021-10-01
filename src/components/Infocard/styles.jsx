@@ -8,7 +8,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   background-color: #70e241;
-  border-radius: 5%;
+  border-radius: 10px;
 `;
 
 const Card = styled.div`

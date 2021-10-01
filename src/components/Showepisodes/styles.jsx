@@ -11,8 +11,8 @@ const Container = styled.div`
   border-radius: 10px;
 `;
 
-const Location = styled.h1`
+const Episode = styled.h1`
   color: #fff;
 `;
 
-export { Container, Location };
+export { Container, Episode };

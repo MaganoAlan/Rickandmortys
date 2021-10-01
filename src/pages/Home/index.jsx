@@ -8,11 +8,21 @@ import { FaHome } from "react-icons/fa";
 import { IoPlanet } from "react-icons/io5";
 import { BiCameraMovie } from "react-icons/bi";
 
-import { Button, Container, Footer, Pagetitle, Pagination } from "./styles";
+import {
+  Button,
+  Container,
+  Footer,
+  IMG,
+  Pagetitle,
+  Pagination,
+} from "./styles";
 
 import Infocard from "../../components/Infocard";
 //Links para as paginas o arquivo Routes.js está sendo chamado no App.js
 import { Link } from "react-router-dom";
+import "./index.css";
+const image =
+  "https://occ-0-1723-1722.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABQOxGMxzPfr3lvtrDxZ9ahcGCw4wMQsdBljUXHiuon2Oa1SmjgGWYx-QWkyLuFwEaguoI3yaq592H-XkHzLbtgh5Pu9ljDJV6AzS.png?r=1ab";
 
 const api = "https://rickandmortyapi.com/api/character/";
 
@@ -58,18 +68,16 @@ function Home() {
   //search está sendo alterado pelo input e sendo chamado no value do input
   //infos.name (deixando minúscula o retorno da api) e search toLowerCase ,
   //(deixando minúscula a digitação do input) para evitar diferenças no filtro
-  const filteredInfo =
-    info == null
-      ? "sem resultados"
-      : info.filter((infos) =>
-          infos.name.toLowerCase().includes(search.toLowerCase())
-        );
+  const filteredInfo = info.filter((infos) =>
+    infos.name.toLowerCase().includes(search.toLowerCase())
+  );
   //console.log(search);
 
   return (
     <>
       <header>
-        <Pagetitle>Rick and Morty Characters Locations and Episodes</Pagetitle>
+        <IMG src={image} />
+        <Pagetitle className="tit">Characters Locations and Episodes</Pagetitle>
       </header>
       <Button onClick={gohome}>
         <FaHome size={50} />

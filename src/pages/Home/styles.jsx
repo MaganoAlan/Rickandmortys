@@ -12,11 +12,12 @@ const Pagetitle = styled.h1`
   margin: 0 auto;
   padding-top: 2%;
   margin-bottom: 5%;
-  color: #fff;
+  color: #f0f0f0;
+  font-size: 38pt;
 `;
 
 const Footer = styled.footer`
-  color: #fff;
+  color: #ffffff;
   font-weight: 600;
 `;
 
@@ -41,4 +42,11 @@ const Pagination = styled.div`
   justify-content: space-around;
 `;
 
-export { Container, Pagetitle, Footer, Button, Pagination };
+const IMG = styled.img`
+  width: auto;
+  height: auto;
+  max-width: 300px;
+  max-height: 300px;
+`;
+
+export { Container, Pagetitle, Footer, Button, Pagination, IMG };
