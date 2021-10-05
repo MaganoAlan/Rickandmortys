@@ -12,7 +12,7 @@ const Pagetitle = styled.h1`
   margin: 0 auto;
   padding-top: 2%;
   margin-bottom: 5%;
-  color: #f0f0f0;
+  color: #2e9fa3;
   font-size: 38pt;
 `;
 

@@ -18,6 +18,7 @@ import {
 } from "./styles";
 
 import Infocard from "../../components/Infocard";
+
 //Links para as paginas o arquivo Routes.js está sendo chamado no App.js
 import { Link } from "react-router-dom";
 import "./index.css";
@@ -30,15 +31,16 @@ function Home() {
   const [info, setInfo] = useState([]);
   const [page, setPage] = useState(null);
   const [search, setSearch] = useState("");
+  const [species, setSpecies] = useState("");
 
   //useEffect para filtar a busca em toda api
   useEffect(() => {
-    fetch(`${api}?name=${search}`)
+    fetch(`${api}?name=${search}&species=${species}`)
       .then((response) => response.json())
       .then((response) => {
         setInfo(response.results);
       });
-  }, [search]);
+  }, [search, species]);
   //useEffect para setar as paginas
   useEffect(() => {
     fetch(`${api}?page=${page}`) //manipulando a paginação com variável
@@ -68,10 +70,14 @@ function Home() {
   //search está sendo alterado pelo input e sendo chamado no value do input
   //infos.name (deixando minúscula o retorno da api) e search toLowerCase ,
   //(deixando minúscula a digitação do input) para evitar diferenças no filtro
-  const filteredInfo = info.filter((infos) =>
-    infos.name.toLowerCase().includes(search.toLowerCase())
-  );
+  // VVVV Se info ok && aplica o método flter vvvv isso imede de crashar VVVV
+  const filteredInfo =
+    info &&
+    info.filter((infos) =>
+      infos.name.toLowerCase().includes(search.toLowerCase())
+    );
   //console.log(search);
+  //console.log(species);
 
   return (
     <>
@@ -79,6 +85,7 @@ function Home() {
         <IMG src={image} />
         <Pagetitle className="tit">Characters Locations and Episodes</Pagetitle>
       </header>
+
       <Button onClick={gohome}>
         <FaHome size={50} />
       </Button>
@@ -92,16 +99,29 @@ function Home() {
       <br />
 
       <Container>
+        <select
+          className="sel"
+          onChange={(sp) => setSpecies(sp.target.value)}
+          value={species}
+        >
+          <option selected={true} value="" disabled>
+            Species
+          </option>
+          <option value="">All</option>
+          <option value="Human">Human</option>
+          <option value="Alien">Alien</option>
+          <option value="Unknow">Unknow</option>
+        </select>
         <input
-          placeholder={"🔍 Search characters "}
+          className="search"
+          placeholder={" Search characters "}
           type="text"
           value={search}
           onChange={(text) => setSearch(text.target.value)}
         />
 
-        {filteredInfo.map((info) => (
-          <Infocard key={info.id} item={info} />
-        ))}
+        {filteredInfo &&
+          filteredInfo.map((info) => <Infocard key={info.id} item={info} />)}
       </Container>
       <Pagination>
         <Button hidden={page <= 1 ? true : false} onClick={prevpage}>
