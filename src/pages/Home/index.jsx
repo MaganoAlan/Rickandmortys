@@ -89,7 +89,7 @@ function Home() {
       <Button onClick={gohome}>
         <FaHome size={50} />
       </Button>
-      <Link to="Locations">
+      <Link to="/Locations">
         <IoPlanet color={"#FFF"} size={50} />
       </Link>
       <Link to="/Episodes">
@@ -97,6 +97,9 @@ function Home() {
       </Link>
       <br />
       <br />
+      <Link to="/Login">
+        <button>Login</button>
+      </Link>
 
       <Container>
         <select
@@ -108,8 +111,12 @@ function Home() {
             Species
           </option>
           <option value="">All</option>
-          <option value="Human">Human</option>
           <option value="Alien">Alien</option>
+          <option value="Animal">Animal</option>
+          <option value="Human">Human</option>
+          <option value="Humanoid">Humanoid</option>
+          <option value="Mythological">Mythological</option>
+          <option value="Poopybutthole">Poopybutthole</option>
           <option value="Unknow">Unknow</option>
         </select>
         <input
