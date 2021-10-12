@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Title, Button, IMG } from "./styles";
+import { Container, Title, Button, IMG, Pagination } from "./styles";
 import { Link } from "react-router-dom";
 import { RiArrowLeftCircleLine, RiArrowRightCircleLine } from "react-icons/ri";
 import { FaHome } from "react-icons/fa";
@@ -37,19 +37,31 @@ function Episodes() {
       <Container>
         <IMG src={image} />
         <Title className="tit">Episodes</Title>
+        <Title>Picle Rick x Psychologist</Title>
+        <iframe
+          width="640"
+          height="360"
+          src="https://www.youtube.com/embed/xvmgqKkm37o"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
         {episode.map((ep) => (
           <Showepisodes key={ep.id} item={ep} />
         ))}
         <Link to="/">
           <FaHome color={"#FFF"} size={100} />
         </Link>
+        <Pagination>
+          <Button hidden={page <= 1 ? true : false} onClick={prevpage}>
+            <RiArrowLeftCircleLine size={100} />
+          </Button>
+          <Button onClick={nextpage}>
+            <RiArrowRightCircleLine size={100} />
+          </Button>
+        </Pagination>
       </Container>
-      <Button hidden={page <= 1 ? true : false} onClick={prevpage}>
-        <RiArrowLeftCircleLine size={100} />
-      </Button>
-      <Button onClick={nextpage}>
-        <RiArrowRightCircleLine size={100} />
-      </Button>
     </>
   );
 }

@@ -12,7 +12,7 @@ const Pagetitle = styled.h1`
   margin: 0 auto;
   padding-top: 2%;
   margin-bottom: 5%;
-  color: #2e9fa3;
+  color: #6fd6f0;
   font-size: 38pt;
 `;
 
@@ -49,4 +49,16 @@ const IMG = styled.img`
   max-height: 300px;
 `;
 
-export { Container, Pagetitle, Footer, Button, Pagination, IMG };
+const Video = styled.video`
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1000;
+  background-size: cover;
+`;
+
+export { Container, Pagetitle, Footer, Button, Pagination, IMG, Video };

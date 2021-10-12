@@ -35,5 +35,13 @@ const IMG = styled.img`
   max-width: 300px;
   max-height: 300px;
 `;
+const Pagination = styled.div`
+  display: flex;
+  flex-direction: row;
+  background: none;
+  width: auto;
+  height: auto;
+  justify-content: space-around;
+`;
 
-export { Container, Title, Button, IMG };
+export { Container, Title, Button, IMG, Pagination };

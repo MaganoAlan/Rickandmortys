@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, Card, IMG, Form } from "./styles";
+import { Container, Card, IMG, Form, Button, Styledlink } from "./styles";
 
 import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
@@ -20,9 +20,15 @@ function Login() {
           <label htmlFor="Password">Password</label>
           <input type="password" placeholder="Password" />
           <br />
-          <button type="submit">Entrar</button>
+          <Button type="submit">Sign In</Button>
           <br />
-          <a href="https://www.google.com.br">Forgot password ?</a>
+          <Styledlink href="https://www.google.com.br">
+            Create Acount
+          </Styledlink>
+          <br />
+          <Styledlink href="https://www.google.com.br">
+            Forgot password ?
+          </Styledlink>
         </Form>
       </Card>
       <Link to="/">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Container, Title, IMG } from "./styles";
+import { Button, Container, Title, IMG, Pagination } from "./styles";
 import { Link } from "react-router-dom";
 import { RiArrowLeftCircleLine, RiArrowRightCircleLine } from "react-icons/ri";
 import { FaHome } from "react-icons/fa";
@@ -45,13 +45,15 @@ function Locations() {
         <Link to="/">
           <FaHome color={"#FFF"} size={100} />
         </Link>
+        <Pagination>
+          <Button hidden={page <= 1 ? true : false} onClick={prevpage}>
+            <RiArrowLeftCircleLine size={100} />
+          </Button>
+          <Button onClick={nextpage}>
+            <RiArrowRightCircleLine size={100} />
+          </Button>
+        </Pagination>
       </Container>
-      <Button hidden={page <= 1 ? true : false} onClick={prevpage}>
-        <RiArrowLeftCircleLine size={100} />
-      </Button>
-      <Button onClick={nextpage}>
-        <RiArrowRightCircleLine size={100} />
-      </Button>
     </>
   );
 }

@@ -15,9 +15,12 @@ import {
   IMG,
   Pagetitle,
   Pagination,
+  Video,
 } from "./styles";
 
 import Infocard from "../../components/Infocard";
+
+import video from "../../assets/videos/backgroundvideo.webm";
 
 //Links para as paginas o arquivo Routes.js está sendo chamado no App.js
 import { Link } from "react-router-dom";
@@ -84,6 +87,9 @@ function Home() {
       <header>
         <IMG src={image} />
         <Pagetitle className="tit">Characters Locations and Episodes</Pagetitle>
+        <Video autoPlay loop poster={image}>
+          <source src={video} type="video/webm" />
+        </Video>
       </header>
 
       <Button onClick={gohome}>
@@ -107,7 +113,7 @@ function Home() {
           onChange={(sp) => setSpecies(sp.target.value)}
           value={species}
         >
-          <option selected={true} value="" disabled>
+          <option defaultValue={true} value="" disabled>
             Species
           </option>
           <option value="">All</option>

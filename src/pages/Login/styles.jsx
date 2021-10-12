@@ -38,4 +38,27 @@ const Form = styled.form`
   text-align: left;
 `;
 
-export { Container, Card, IMG, Form };
+const Button = styled.button`
+  padding: 2%;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: 1px #bbbbbb;
+  width: auto;
+  align-self: center;
+  cursor: pointer;
+
+  &: hover {
+    background-color: #b5fab8;
+    box-shadow: 2px 2px 2px #0000007f;
+  }
+`;
+
+const Styledlink = styled.a`
+  text-decoration: none;
+  color: #007ef3;
+  &: hover {
+    color: #25c0b3;
+  }
+`;
+
+export { Container, Card, IMG, Form, Button, Styledlink };
