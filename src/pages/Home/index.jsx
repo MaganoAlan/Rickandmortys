@@ -20,7 +20,7 @@ import {
 
 import Infocard from "../../components/Infocard";
 
-import video from "../../assets/videos/backgroundvideo.webm";
+import backgroundvideo from "../../assets/videos/backgroundvideo.webm";
 
 //Links para as paginas o arquivo Routes.js está sendo chamado no App.js
 import { Link } from "react-router-dom";
@@ -87,8 +87,8 @@ function Home() {
       <header>
         <IMG src={image} />
         <Pagetitle className="tit">Characters Locations and Episodes</Pagetitle>
-        <Video autoPlay loop poster={image}>
-          <source src={video} type="video/webm" />
+        <Video preload="auto" autoPlay="true" loop poster={image}>
+          <source src={backgroundvideo} type="video/webm" />
         </Video>
       </header>
 
@@ -96,10 +96,14 @@ function Home() {
         <FaHome size={50} />
       </Button>
       <Link to="/Locations">
-        <IoPlanet color={"#FFF"} size={50} />
+        <IoPlanet style={{ textDecoration: "none" }} color={"#FFF"} size={50} />
       </Link>
       <Link to="/Episodes">
-        <BiCameraMovie color={"#FFF"} size={50} />
+        <BiCameraMovie
+          style={{ textDecoration: "none" }}
+          color={"#FFF"}
+          size={50}
+        />
       </Link>
       <br />
       <br />
