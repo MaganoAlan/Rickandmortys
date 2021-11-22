@@ -16,11 +16,6 @@ const Pagetitle = styled.h1`
   font-size: 38pt;
 `;
 
-const Footer = styled.footer`
-  color: #ffffff;
-  font-weight: 600;
-`;
-
 const Button = styled.button`
   background: none;
   cursor: pointer;
@@ -47,6 +42,8 @@ const IMG = styled.img`
   height: auto;
   max-width: 300px;
   max-height: 300px;
+  margin: 0 auto;
+  display: block;
 `;
 
 const Video = styled.video`
@@ -61,4 +58,10 @@ const Video = styled.video`
   background-size: cover;
 `;
 
-export { Container, Pagetitle, Footer, Button, Pagination, IMG, Video };
+const Actions = styled.div`
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+`;
+
+export { Container, Pagetitle, Button, Pagination, IMG, Video, Actions };

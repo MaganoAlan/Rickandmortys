@@ -10,12 +10,18 @@ const Container = styled.div`
   height: auto;
   margin: 0 auto;
   padding: 0;
+  text-align: center;
 `;
 
 const Title = styled.h1`
   color: #fff;
   margin: 0 auto;
   font-size: 32pt;
+  font-family: Rick and Morty Font;
+  @font-face {
+    font-family: Rick and Morty Font;
+    src: url("../../assets/fonts/get_schwifty.ttf");
+  }
 `;
 const Button = styled.button`
   background: none;
@@ -34,6 +40,8 @@ const IMG = styled.img`
   height: auto;
   max-width: 300px;
   max-height: 300px;
+  margin: 0 auto;
+  display: flex;
 `;
 const Pagination = styled.div`
   display: flex;

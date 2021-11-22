@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Button, Container, Title, IMG, Pagination } from "./styles";
+import { Button, Container, IMG, Pagination } from "./styles";
 import { Link } from "react-router-dom";
 import { RiArrowLeftCircleLine, RiArrowRightCircleLine } from "react-icons/ri";
 import { FaHome } from "react-icons/fa";
 import Showlocations from "../../components/Showlocations";
+import { Titletext } from "../../components/Titles/styles";
 
 const image =
   "https://occ-0-1723-1722.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABQOxGMxzPfr3lvtrDxZ9ahcGCw4wMQsdBljUXHiuon2Oa1SmjgGWYx-QWkyLuFwEaguoI3yaq592H-XkHzLbtgh5Pu9ljDJV6AzS.png?r=1ab";
@@ -38,7 +39,8 @@ function Locations() {
     <>
       <Container>
         <IMG src={image} />
-        <Title className="tit">Locations</Title>
+        <Titletext>Locations</Titletext>
+
         {location.map((local) => (
           <Showlocations key={local.id} item={local} />
         ))}

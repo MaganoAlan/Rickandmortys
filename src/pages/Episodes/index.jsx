@@ -36,17 +36,8 @@ function Episodes() {
     <>
       <Container>
         <IMG src={image} />
-        <Title className="tit">Episodes</Title>
-        <Title>Picle Rick x Psychologist</Title>
-        <iframe
-          width="640"
-          height="360"
-          src="https://www.youtube.com/embed/xvmgqKkm37o"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+        <Title>Episodes</Title>
+
         {episode.map((ep) => (
           <Showepisodes key={ep.id} item={ep} />
         ))}

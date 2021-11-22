@@ -9,13 +9,9 @@ const Container = styled.div`
   height: auto;
   margin: 0 auto;
   padding: 0;
+  text-align: center;
 `;
 
-const Title = styled.h1`
-  color: #fff;
-  margin: 0 auto;
-  font-size: 32pt;
-`;
 const Button = styled.button`
   background: none;
   cursor: pointer;
@@ -43,4 +39,4 @@ const Pagination = styled.div`
   justify-content: space-around;
 `;
 
-export { Container, Title, Button, IMG, Pagination };
+export { Container, Button, IMG, Pagination };
