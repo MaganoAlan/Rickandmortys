@@ -10,7 +10,8 @@ import backgroundvideo from "../../assets/videos/backgroundvideo.webm";
 import { Link } from "react-router-dom";
 import { Header } from "../../components/Header/styles";
 import { Titletext } from "../../components/Titles/styles";
-import { Primarybutton } from "../../components/Primarybutton/styles";
+import Primarybutton from "../../components/Primarybutton";
+//import { Primarybutton } from "../../components/Primarybutton/styles";
 
 const image =
   "https://occ-0-1723-1722.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABQOxGMxzPfr3lvtrDxZ9ahcGCw4wMQsdBljUXHiuon2Oa1SmjgGWYx-QWkyLuFwEaguoI3yaq592H-XkHzLbtgh5Pu9ljDJV6AzS.png?r=1ab";
@@ -119,11 +120,7 @@ function Home() {
           />
         </Actions>
       </Header>
-      <Primarybutton type="button">
-        <Link to="/Login" style={{ textDecoration: "none", color: "#646161" }}>
-          Login
-        </Link>
-      </Primarybutton>
+      <Primarybutton to={"/Login"} text="Login" />
 
       <Container>
         {filteredInfo && filteredInfo != null ? (

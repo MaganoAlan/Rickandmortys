@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Primarybutton = styled.button`
+export const Btn = styled.button`
   width: auto;
   height: auto;
   margin: 1% auto;
